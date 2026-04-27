@@ -85,7 +85,7 @@ st.write("Ask questions about funnels, features, or the platform.")
 text = load_docs()
 chunks = chunk_text(text)
 
-# 🔥 Clean chunks (IMPORTANT)
+# Clean chunks (IMPORTANT)
 chunks = [c.strip() for c in chunks if c.strip()]
 
 # Build retriever
@@ -100,7 +100,7 @@ if st.button("Ask"):
         with st.spinner("Thinking..."):
             context = retriever.retrieve(query)
 
-            # 🔥 Handle empty context
+            # Handle empty context
             if not context:
                 context = ["No relevant information found."]
 
